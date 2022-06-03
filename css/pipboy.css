@@ -1,0 +1,378 @@
+@font-face {
+    font-family: Pipboy;
+    src: url(../monofonto\ rg.otf)
+}
+
+body {
+    background: #454941;
+    color: #03fd3e;
+    font-family: Pipboy, sans-serif;
+    overflow: hidden;
+}
+
+.scan-overlay {
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    top: -85px;
+    background: linear-gradient(rgba(0,0,0,0), #03fd3e);
+    opacity: 0.15;
+    animation: scan;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    z-index: 99;
+}
+
+@keyframes scan {
+    0% {
+        top: -50px;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+body::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,.5), rgba(0,0,0,.4) 1px, transparent 1px, transparent 2px);
+    opacity: .3;
+    z-index: 1000000;
+    pointer-events: none;
+}
+
+.navbar.navbar-light .navbar-nav {
+    margin: 0 200px;
+}
+
+.navbar {
+    border-bottom: 2px solid;
+    margin: 0px 10px;
+}
+
+.navbar::before,
+.navbar::after {
+    height: 5px;
+    width: 2px;
+    content: "";
+    position: absolute;
+    display: block;
+    z-index: 5000;
+    background: #03fd3e;
+    bottom: -6px;
+}
+.navbar::before {
+    left: 0;
+}
+
+.navbar::after {
+    right: 0;
+}
+
+ul > li.navbar-item-active > a.nav-link,
+ul > li.navbar-item > a.nav-link,
+ul > li.nav-item > a.nav-link,
+ul > li.nav-item > a.nav-link.active {
+    color: #03fd3e !important;
+    font-size: 32px;
+    line-height: 22px;
+    padding-bottom: 0px;
+    z-index: 50;
+    position: relative;
+    background: #454941;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+}
+
+.navbar-item {
+    position: relative;
+    width: 150px;
+}
+
+.navbar-item.active::before{
+    content: "";
+    position: absolute;
+    background: #454941;
+    width: 100%;
+    height: 22px;
+    top: 18px;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-top: 2px solid
+}
+
+.center-image {
+    position: absolute;
+    margin-left: 100px;
+}
+
+.center-image img {
+    margin: auto;
+    display: block;
+    position: relative;
+    max-height: 300px;
+    margin-top: 50px;
+    filter: grayscale(1) sepia(100%) hue-rotate(55deg) saturate(7) brightness(1) contrast(2);
+}
+
+.pip-footer {
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 20px);
+    margin: 10px;
+    font-size: 22px;
+}
+
+.navbar-light.pip-footer .row .col-3,
+.navbar-light.pip-footer .row .col-6 {
+    background: rgba(16, 255, 0, 0.15);
+    padding: 5px 10px;
+}
+
+.navbar-light.pip-footer .row .col-6 {
+    margin: 0 5px;
+    flex: 0 0 48%;
+
+}.navbar-light.pip-footer .row {
+    margin: auto;
+}
+
+ul > li.navbar-item-active > a.nav-link,
+ul > li.navbar-item > a.nav-link,
+ul > li.nav-item > a.nav-link,
+ul > li.nav-item > a.nav-link.active {
+    border-color: transparent;
+}
+
+.nav.nav-tabs {
+    margin: 20px;
+    border-bottom: none;
+}
+
+.nav.nav-tabs > li > a {
+    font-size: 26px !important;
+    padding: 5px 10px;
+}
+
+.nav.nav-tabs > li:nth-child(2) {
+    opacity: .6;
+}
+
+.nav.nav-tabs > li:nth-child(3) {
+    opacity: .3;
+}
+
+.nav.nav-tabs > .nav-item > .nav-link:hover {
+    border: 1px solid transparent;
+}
+
+.level-progress {
+    width: 70%;
+    height: 10px;
+    border: 2px solid;
+    display: inline-block;
+}
+
+.level-progress-indicator {
+    height: 7px;
+    background: #03fd3e;
+    position: relative;
+    width: 70%;
+}
+
+.stat-bar {
+    width: 60px;
+    margin: auto;
+}
+
+.stat-bars {
+    max-width: 400px;
+    margin: auto;
+}
+
+.stat-bars > .row {
+    margin-bottom: 100px;
+}
+
+.w10 {
+    width: 10%;
+}
+
+.w20 {
+    width: 20%;
+}
+
+.w30 {
+    width: 30%;
+}
+
+.w40 {
+    width: 40%;
+}
+
+.w50 {
+    width: 50%;
+}
+
+.w60 {
+    width: 60%;
+}
+
+.w70 {
+    width: 70%;
+}
+
+.w80 {
+    width: 80%;
+}
+
+.w90 {
+    width: 90%;
+}
+
+.stat-numbers .col-2 {
+    width: 80px;
+}
+
+.stat-numbers .col-1,
+.stat-numbers .col-2 {
+    background: rgba(16, 255, 0, 0.15);
+    margin-right: 4px;
+}
+
+.stat-numbers .col-1.transparent,
+.stat-numbers .col-2.transparent {
+    background: transparent;
+}
+
+.stat-numbers img {
+    width: 100%;
+    filter: grayscale(1) brightness(200) contrast(0) sepia(100%) hue-rotate(55deg) saturate(20);
+}
+
+.spacer-numbers {
+    width: 50px;
+}
+
+.item-list {
+    float: left;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.item-list li a {
+    display: block;
+    width: 300px;
+    padding: 5px 10px;
+    border-radius: 2px;
+    color: #03fd3e;
+    text-decoration: none !important;
+    padding-left: 25px;
+}
+
+.item-list li a:hover {
+    text-decoration: none;
+    background: #03fd3e;
+    color: #454941;
+    padding-left: 10px;
+}
+
+.item-list li a.active::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background-color: #03fd3e;
+    left: 119px;
+    margin-top: 7px;
+}
+
+.item-list li a.active:hover::before {
+    background: #454941;
+}
+
+.tab-pane {
+    height: calc(100vh - 180px);
+}
+
+.item-stats {
+    position: absolute;
+    right: 45px;
+    bottom: 120px;
+    width: 200px;
+}
+
+.item-stats .row .col-12 {
+    background: rgba(16, 255, 0, 0.15);
+    margin-bottom: 2px;
+}
+
+.pull-right {
+    float: right !important
+}
+
+.pull-left {
+    float: left !important
+}
+
+#status {
+    max-width: 400px;
+    margin: auto;
+}
+
+.points {
+    margin: 10px -3px 0;
+}
+
+.resize-col {
+    width: 37px;
+}
+
+.icon-align {
+    width: 20px;
+    margin-left: -3px;
+}
+
+.pip-footer img {
+    width: 35px;
+    filter: grayscale(1) brightness(200) contrast(0) sepia(100%) hue-rotate(55deg) saturate(20);
+}
+
+.inv .row .col-3 {
+    margin-right: 5px;
+}
+
+.navbar-light.inv .row .col-6 {
+    margin: 0;
+}
+
+.gun-img {
+    transform: scaleX(-1);
+    margin-right: 10px;
+}
+
+.inv-crosshair {
+    width: 17px !important;
+    margin-right: 5px;
+}
+
+.right-side-inv-footer {
+    display: flex;
+    align-items: center;
+}
+
+.right-side {
+    justify-content: flex-end;
+}
+
+.inv-footer-items {
+    display: flex;
+    align-items: center;
+}
